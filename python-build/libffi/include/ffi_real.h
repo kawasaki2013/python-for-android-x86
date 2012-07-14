@@ -161,9 +161,10 @@ extern ffi_type ffi_type_double;
 extern ffi_type ffi_type_pointer;
 
 #if CONF_HAVE_LONG_DOUBLE       // android changed
-extern ffi_type ffi_type_longdouble;
+#define ffi_type_longdouble 4
+//extern ffi_type ffi_type_longdouble;
 #else
-#define ffi_type_longdouble ffi_type_double
+#define ffi_type_longdouble 4 //ffi_type_double
 #endif
 #endif /* LIBFFI_HIDE_BASIC_TYPES */
 

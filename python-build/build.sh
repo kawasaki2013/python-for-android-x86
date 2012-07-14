@@ -78,12 +78,12 @@ pushd ${CWD}/python
 ${CWD}/host/pgen ${CWD}/python-src/Grammar/Grammar \
 	${CWD}/python-src/Include/graminit.h \
 	${CWD}/python-src/Python/graminit.c
-ndk-build
+ndk-build NDK_APPLICATION_MK=${CWD}/App_x86.mk
 
 # copy out all the needed files
-mv obj/local/armeabi/python	${OUT}/usr/bin
-mv obj/local/armeabi/lib*.so	${OUT}/usr/lib
-mv obj/local/armeabi/*.so	${OUT}/usr/lib/python2.6/lib-dynload
+mv obj/local/x86/python	${OUT}/usr/bin
+mv obj/local/x86/lib*.so	${OUT}/usr/lib
+mv obj/local/x86/*.so	${OUT}/usr/lib/python2.6/lib-dynload
 popd
 
 pushd ${CWD}/python-libs

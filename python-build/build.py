@@ -82,7 +82,7 @@ def rm(path):
 
 
 def strip(path):
-  run('arm-linux-androideabi-strip %s' % path)
+  run('i686-android-linux-strip %s' % path)
 
 
 def zipup(out_path, in_path, top, exclude=None, prefix=''):
