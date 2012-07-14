@@ -161,10 +161,9 @@ extern ffi_type ffi_type_double;
 extern ffi_type ffi_type_pointer;
 
 #if CONF_HAVE_LONG_DOUBLE       // android changed
-#define ffi_type_longdouble 4
-//extern ffi_type ffi_type_longdouble;
+extern ffi_type ffi_type_longdouble;
 #else
-#define ffi_type_longdouble 4 //ffi_type_double
+#define ffi_type_longdouble ffi_type_double
 #endif
 #endif /* LIBFFI_HIDE_BASIC_TYPES */
 
@@ -372,7 +371,7 @@ void ffi_call(ffi_cif *cif,
 #if CONF_HAVE_LONG_DOUBLE       // android changed
 #define FFI_TYPE_LONGDOUBLE 4
 #else
-#define FFI_TYPE_LONGDOUBLE FFI_TYPE_DOUBLE
+#define FFI_TYPE_LONGDOUBLE 4  // FFI_TYPE_DOUBLE
 #endif
 #define FFI_TYPE_UINT8      5   
 #define FFI_TYPE_SINT8      6

@@ -4,7 +4,7 @@ OPENSSL := $(LOCAL_PATH)/../../openssl
 
 include $(CLEAR_VARS)
 
-LOCAL_C_INCLUDES := $(PYTHON_SRC_PATH) $(PYTHON_SRC_PATH)/Include $(OPENSSL)/include /home/ken/work/sprinthill/sprinthill/prebuilt/ndk/android-ndk-r4/platforms/android-5/arch-x86/usr/include
+LOCAL_C_INCLUDES := $(PYTHON_SRC_PATH) $(PYTHON_SRC_PATH)/Include $(OPENSSL)/include 
 LOCAL_MODULE := python
 LOCAL_SRC_FILES := Modules/python.c
 LOCAL_PATH := $(PYTHON_SRC_PATH)
