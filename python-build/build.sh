@@ -91,7 +91,8 @@ bash -ex setuptools.sh
 popd
 
 ${CWD}/host/bin/python ${OUT}/usr/lib/python2.6/compileall.py ${OUT}/usr/lib/python2.6
-${CWD}/host/bin/python build.py
+#${CWD}/host/bin/python build.py
+python build.py
 
 if [ "$DEBUG" != "yes" ]; then
     rm -rf output*
