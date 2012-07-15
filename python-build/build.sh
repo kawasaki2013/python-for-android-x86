@@ -4,7 +4,7 @@ VERSION=2.6.2
 export NDK_MODULE_PATH=$(pwd)
 set -ex
 CWD=$(pwd)
-DEBUG=no
+DEBUG=yes
 
 RELEASE_VERSION=$(cat LATEST_VERSION)
 echo "Building Python VM For Android Release ${RELEASE_VERSION}"
