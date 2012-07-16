@@ -125,14 +125,14 @@ include $(BUILD_SHARED_LIBRARY)
 
 #$(call build-module,  _ssl ,  Modules/_ssl.c, ssl crypto )
 
-#$(call import-module, openssl)
-#LOCAL_PATH :=  $(PYTHON_SRC_PATH)
-#LOCAL_C_INCLUDES += $(PYTHON_SRC_PATH) $(PYTHON_SRC_PATH)/Include $(OPENSSL)/include $(OPENSSL)
-#LOCAL_MODULE := _ssl
-#LOCAL_MODULE_FILENAME := _ssl
-#LOCAL_SRC_FILES := Modules/_ssl.c 
-#LOCAL_SHARED_LIBRARIES := libpython2.6 libcrypto libssl
-#include $(BUILD_SHARED_LIBRARY)
+$(call import-module, openssl)
+LOCAL_PATH :=  $(PYTHON_SRC_PATH)
+LOCAL_C_INCLUDES += $(PYTHON_SRC_PATH) $(PYTHON_SRC_PATH)/Include $(OPENSSL)/include $(OPENSSL)
+LOCAL_MODULE := _ssl
+LOCAL_MODULE_FILENAME := _ssl
+LOCAL_SRC_FILES := Modules/_ssl.c 
+LOCAL_SHARED_LIBRARIES := libpython2.6 libcrypto libssl
+include $(BUILD_SHARED_LIBRARY)
 
 
 $(call import-module, libffi)
