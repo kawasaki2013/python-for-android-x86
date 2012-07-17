@@ -29,11 +29,12 @@ def work():
     BIN_VERSION=open("LATEST_VERSION").read().strip()
     EXTRA_VERSION=open("LATEST_VERSION_EXTRA").read().strip()
     os.system("mkdir -p ../android/PythonForAndroidInOne/res/raw/")
-    os.system("mkdir -p ../android/PythonForAndroidInOne/libs/armeabi")
+    os.system("mkdir -p ../android/PythonForAndroidInOne/libs/x86")
     XML=open("../android/PythonForAndroidInOne/res/raw/files.xml", "w")
-    ARMEABI="../android/PythonForAndroidInOne/libs/armeabi/"
-    
-    os.system("rm %s/*.so" % ARMEABI)
+    #ARMEABI="../android/PythonForAndroidInOne/libs/armeabi/"
+    X86ABI="../android/PythonForAndroidInOne/libs/x86/"
+
+    os.system("rm %s/*.so" % X86ABI)
 
     XML.write('<?xml version="1.0" encoding="UTF-8"?>\n')
     XML.write('<files>\n')
@@ -43,12 +44,12 @@ def work():
         g = dyn_match.match(f.filename).groupdict()
         XML.write('<file src="lib%04i.so" target="%s"/>\n' % (i, path.findall(f.filename)[0]))
         f.filename = "lib%04i.so" % i
-        print z.extract(f, ARMEABI)
+        print z.extract(f, X86ABI)
         i=i+1
 
     XML.write('<file src="lib%04i.so" target="lib/python2.6/python.zip"/>\n' % i)
     XML.write('</files>\n')
-    os.system("cp python_extras_%s.zip %s/lib%04i.so" % ( EXTRA_VERSION, ARMEABI, i ) )
+    os.system("cp python_extras_%s.zip %s/lib%04i.so" % ( EXTRA_VERSION, X86ABI, i ) )
     XML.close()
 
 if __name__=='__main__':

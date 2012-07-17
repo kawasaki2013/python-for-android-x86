@@ -5,7 +5,7 @@
     <property environment="env"/>
     <path id="classpath">
 	<fileset dir="libs" includes="**/*.jar" />
-	<fileset dir="${env.ANDROID_SDK}/platforms/android-3/" includes="**/*.jar" />
+	<fileset dir="${env.ANDROID_SDK}/platforms/android-10/" includes="**/*.jar" />
     </path>
 
     <target name="init">
